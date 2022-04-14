@@ -22,6 +22,7 @@ namespace _028_windowsCalc
         private double saved;
         private string op;              // + - * /
         private bool afterCalc;
+        private double memory;
 
         public MainWindow()
         {
@@ -164,6 +165,43 @@ namespace _028_windowsCalc
                 = txtResult.Text.Remove(txtResult.Text.Length-1);
             if (txtResult.Text.Length == 0)
                 txtResult.Text = "0";
+        }
+
+        // MS
+        private void btnMS_Click(object sender, RoutedEventArgs e)
+        {
+            memory = double.Parse(txtResult.Text);
+            btnMC.IsEnabled = true;
+            btnMR.IsEnabled = false;
+            memFlag = true;
+        }
+
+        // MR
+        private void btnMR_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text = memory.ToString();
+            memFlag = true;
+        }
+
+        // MC
+        private void btnMC_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text = "0";
+            memory = 0;
+            btnMR.IsEnabled = false;
+            btnMC.IsEnabled = false;
+        }
+        
+        // M+
+        private void btnMPlus_Click(object sender, RoutedEventArgs e)
+        {
+            memory += double.Parse(txtResult.Text);
+        }
+
+        // M-
+        private void btnMMinus_Click(object sender, RoutedEventArgs e)
+        {
+            memory -= double.Parse(txtResult.Text);
         }
     }
 }

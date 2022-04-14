@@ -35,22 +35,27 @@
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" BorderThickness="0"
                     x:Name="btnMC"
+                    Click="btnMC_Click"
                     FontSize="14" FontWeight="Bold"
                     Background="WhiteSmoke">MC</Button>
             <Button Grid.Column="1" BorderThickness="0"
                     x:Name="btnMR"
+                    Click="btnMR_Click"
                     FontSize="14" FontWeight="Bold"
                     Background="WhiteSmoke">MR</Button>
             <Button Grid.Column="2" BorderThickness="0"
                     x:Name="btnMPlus"
+                    Click="btnMPlus_Click"
                     FontSize="14" FontWeight="Bold"
                     Background="WhiteSmoke">M+</Button>
             <Button Grid.Column="3" BorderThickness="0"
                     x:Name="btnMMinus"
+                    Click="btnMMinus_Click"
                     FontSize="14" FontWeight="Bold"
                     Background="WhiteSmoke">M-</Button>
             <Button Grid.Column="4" BorderThickness="0"
                     x:Name="btnMS"
+                    Click="btnMS_Click"
                     FontSize="14" FontWeight="Bold"
                     Background="WhiteSmoke">MS</Button>
         </Grid>
