@@ -72,7 +72,7 @@ namespace _028_windowsCalc
         private void btnEqual_Click(object sender, RoutedEventArgs e)
         {
             double v = double.Parse(txtResult.Text);
-            txtExp.Text += txtResult.Text + "=";
+            txtExp.Text += txtResult.Text + " =";
 
             switch (op)
             {
@@ -95,6 +95,7 @@ namespace _028_windowsCalc
             afterCalc = true;
         }
 
+        // +- 버튼
         private void btnPlusMinus_Click(object sender, RoutedEventArgs e)
         {
             txtResult.Text = 
@@ -120,6 +121,7 @@ namespace _028_windowsCalc
             txtResult.Text = (Math.Sqrt(double.Parse(txtResult.Text))).ToString();
         }
 
+        // 제곱
         private void btnSqr_Click(object sender, RoutedEventArgs e)
         {
             if (txtExp.Text == "")
@@ -172,7 +174,7 @@ namespace _028_windowsCalc
         {
             memory = double.Parse(txtResult.Text);
             btnMC.IsEnabled = true;
-            btnMR.IsEnabled = false;
+            btnMR.IsEnabled = true;
             memFlag = true;
         }
 

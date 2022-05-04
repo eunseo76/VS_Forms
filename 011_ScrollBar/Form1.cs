@@ -34,7 +34,7 @@ namespace _011_ScrollBar
       txtG.Text = scrG.Value.ToString();
       txtB.Text = scrB.Value.ToString();
 
-      panel1.BackColor = Color.FromArgb(scrR.Value, scrG.Value, scrB.Value);
+      //panel1.BackColor = Color.FromArgb(scrR.Value, scrG.Value, scrB.Value);
     }
 
     private void txt_TextChanged(object sender, EventArgs e)

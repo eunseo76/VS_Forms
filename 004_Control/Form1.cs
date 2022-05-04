@@ -26,7 +26,7 @@ namespace _004_Control
     {
       if (textBox1.Text == "")
         MessageBox.Show("이름을 입력하세요", "Warning",
-          MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+          MessageBoxButtons.OK, MessageBoxIcon.Warning);
       else
         label2.Text = textBox1.Text + "님! 안녕하세요!";
     }

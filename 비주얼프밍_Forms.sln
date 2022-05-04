@@ -59,6 +59,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "027_ChessBoard", "027_chess
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "028_windowsCalc", "028_windowsCalc\028_windowsCalc.csproj", "{99F65866-5997-42E0-A9E0-8EE7041F310C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "029_ListNArray", "029_ListNArray\029_ListNArray.csproj", "{87F810F1-81F6-4FB8-8851-5F8A6D52CA77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "030_PhoneBook", "030_PhoneBook\030_PhoneBook.csproj", "{CD4B2D53-85FB-4ED5-8878-85D32434DE7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -177,6 +181,14 @@ Global
 		{99F65866-5997-42E0-A9E0-8EE7041F310C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99F65866-5997-42E0-A9E0-8EE7041F310C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99F65866-5997-42E0-A9E0-8EE7041F310C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87F810F1-81F6-4FB8-8851-5F8A6D52CA77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87F810F1-81F6-4FB8-8851-5F8A6D52CA77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87F810F1-81F6-4FB8-8851-5F8A6D52CA77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87F810F1-81F6-4FB8-8851-5F8A6D52CA77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD4B2D53-85FB-4ED5-8878-85D32434DE7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD4B2D53-85FB-4ED5-8878-85D32434DE7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD4B2D53-85FB-4ED5-8878-85D32434DE7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD4B2D53-85FB-4ED5-8878-85D32434DE7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

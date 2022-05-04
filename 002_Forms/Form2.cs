@@ -24,7 +24,7 @@ namespace _002_Forms
 
     private void Form2_Load(object sender, EventArgs e)
     {
-      CenterToParent();
+      
     }
   }
 }

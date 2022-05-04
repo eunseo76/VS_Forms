@@ -24,7 +24,7 @@ namespace _003_Messegebox
       DialogResult result1 = MessageBox.Show("두개의 버튼", "Question",
         MessageBoxButtons.YesNo);
       DialogResult result2 = MessageBox.Show("세개의 버튼", "Question",
-        MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question,
+        MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information,
         MessageBoxDefaultButton.Button3);
       MessageBox.Show("느낌표와 알람", "타이틀",
         MessageBoxButtons.OK, MessageBoxIcon.Hand);

@@ -30,8 +30,7 @@ namespace _007_CheckBox
       }
       MessageBox.Show(checkStates, "CheckStates");
 
-        string summary = string.Format("좋아하는 과일은 : ");
-
+      string summary = string.Format("좋아하는 과일은 : ");
       foreach (var c in cBox)
       {
         if (c.Checked == true)
