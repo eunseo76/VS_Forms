@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Data.SqlClient;
+using System.Threading;
 
 namespace _032_Splash
 {
@@ -21,9 +23,12 @@ namespace _032_Splash
     /// </summary>
     public partial class MainWindow : Window
     {
+        string connStr = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\eunse\source\repos\VS_Forms\032_Splash\Colors.mdf;Integrated Security = True";
+        
         List<Border> borderList;
         DispatcherTimer t = new DispatcherTimer();
         Random r = new Random();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -65,6 +70,23 @@ namespace _032_Splash
             // 리스트박스의 스크롤
             lstDB.SelectedIndex = index++;
             lstDB.ScrollIntoView(lstDB.SelectedItem);
+
+            // 데이터베이스에 저장
+            string sql = string.Format(
+                "INSERT INTO ColorTable Values ('{0}', '{1}'",
+                date, time);
+            for (int i = 0; i < 20; i++)
+            {
+                sql += ", " + colors[i];
+            }
+            sql += ")";
+
+            using(SqlConnection conn = new SqlConnection(connStr))
+            using(SqlCommand comm = new SqlCommand(sql, conn))
+            {
+                conn.Open();
+                comm.ExecuteNonQuery();
+            }
         }
 
         bool flag = false;
@@ -84,13 +106,65 @@ namespace _032_Splash
             }
         }
 
+        int id = 0; // 스크롤을 위해서 필요
+        // DB에서 읽어오기
         private void btnDB_Click(object sender, RoutedEventArgs e)
         {
+            lstDB.Items.Clear();
 
+            string sql = "SELECT * FROM ColorTable";
+            int[] colors = new int[20];
+
+            using (SqlConnection conn = new SqlConnection(connStr)) 
+            using (SqlCommand comm = new SqlCommand(sql, conn))
+            {
+                conn.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+
+                string s = "";
+                while (reader.Read())
+                {
+                    s = "";
+                    lblDate.Text = reader["Date"].ToString();
+                    s += lblDate.Text + " ";
+                    lblTime.Text = reader["Time"].ToString();
+                    s += lblTime.Text + " ";
+                    for (int i = 0; i < 20; i++)
+                    {
+                        colors[i] = int.Parse(reader[i+3].ToString());
+                        s += colors[i] + " ";
+                    }
+                    lstDB.Items.Add(s);
+                    lstDB.SelectedIndex = id++;
+                    lstDB.ScrollIntoView(lstDB.SelectedItem);
+
+                    for (int i = 0; i < colors.Length; i++)
+                    {
+                        borderList[i].Background = new SolidColorBrush(
+                            Color.FromRgb(0, (byte)colors[i], 0));
+                    }
+
+                    // WPF delay 주기
+                    Dispatcher.Invoke((ThreadStart)(() => { }),
+                        DispatcherPriority.ApplicationIdle);
+                    Thread.Sleep(20); // 20ms
+                }
+
+            }
         }
 
+        // DB의 값을 지운다.
         private void btnReset_Click(object sender, RoutedEventArgs e)
         {
+            lstDB.Items.Clear();
+            string sql = "DELETE FROM ColorTable";
+
+            using (SqlConnection conn = new SqlConnection(connStr))
+            using (SqlCommand comm = new SqlCommand(sql, conn))
+            {
+                conn.Open();
+                comm.ExecuteNonQuery();
+            }
 
         }
 
