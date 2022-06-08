@@ -18,9 +18,6 @@ using System.Threading;
 
 namespace _032_Splash
 {
-    /// <summary>
-    /// MainWindow.xaml에 대한 상호 작용 논리
-    /// </summary>
     public partial class MainWindow : Window
     {
         string connStr = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\eunse\source\repos\VS_Forms\032_Splash\Colors.mdf;Integrated Security = True";
