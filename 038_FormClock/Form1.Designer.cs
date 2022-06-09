@@ -48,7 +48,7 @@
             this.끝내기ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(698, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(698, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,25 +66,28 @@
             // 아날로그ToolStripMenuItem
             // 
             this.아날로그ToolStripMenuItem.Name = "아날로그ToolStripMenuItem";
-            this.아날로그ToolStripMenuItem.Size = new System.Drawing.Size(186, 34);
+            this.아날로그ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.아날로그ToolStripMenuItem.Text = "아날로그";
+            this.아날로그ToolStripMenuItem.Click += new System.EventHandler(this.아날로그ToolStripMenuItem_Click);
             // 
             // 디지털ToolStripMenuItem
             // 
             this.디지털ToolStripMenuItem.Name = "디지털ToolStripMenuItem";
-            this.디지털ToolStripMenuItem.Size = new System.Drawing.Size(186, 34);
+            this.디지털ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.디지털ToolStripMenuItem.Text = "디지털";
+            this.디지털ToolStripMenuItem.Click += new System.EventHandler(this.디지털ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(183, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(267, 6);
             // 
             // 끝내기ToolStripMenuItem1
             // 
             this.끝내기ToolStripMenuItem1.Name = "끝내기ToolStripMenuItem1";
-            this.끝내기ToolStripMenuItem1.Size = new System.Drawing.Size(186, 34);
+            this.끝내기ToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
             this.끝내기ToolStripMenuItem1.Text = "끝내기";
+            this.끝내기ToolStripMenuItem1.Click += new System.EventHandler(this.끝내기ToolStripMenuItem1_Click);
             // 
             // 끝내기ToolStripMenuItem
             // 
@@ -95,9 +98,9 @@
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 33);
+            this.panel1.Location = new System.Drawing.Point(0, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(698, 739);
+            this.panel1.Size = new System.Drawing.Size(698, 736);
             this.panel1.TabIndex = 1;
             // 
             // Form1

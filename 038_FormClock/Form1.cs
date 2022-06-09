@@ -50,14 +50,33 @@ namespace _038_FormClock
             DateTime c = DateTime.Now;
 
             panel1.Refresh();  // 패널을 지운다
-            DrawClockFace();  // 시계판
 
-            // 시계바늘 그리기
-            double radHr = (c.Hour % 12 + c.Minute / 60.0) * 30 * Math.PI / 180;
-            double radMin = (c.Minute + c.Second / 60.0) * 6 * Math.PI / 180;
-            double radSec = c.Second * 6 * Math.PI / 180;
+            if (aClock_Flag == true)
+            {
+                DrawClockFace();  // 시계판
 
-            DrawHands(radHr, radMin, radSec);
+                // 시계바늘 그리기
+                double radHr = (c.Hour % 12 + c.Minute / 60.0) * 30 * Math.PI / 180;
+                double radMin = (c.Minute + c.Second / 60.0) * 6 * Math.PI / 180;
+                double radSec = c.Second * 6 * Math.PI / 180;
+
+                DrawHands(radHr, radMin, radSec);
+            }
+            else
+            {
+                Font fDate = new Font("맑은 고딕", 12, FontStyle.Bold);
+                Font fTime = new Font("맑은 고딕", 32, 
+                    FontStyle.Bold | FontStyle.Italic);
+                Brush bDate = Brushes.SkyBlue;
+                Brush bTime = Brushes.SteelBlue;
+
+                string date = DateTime.Today.ToString("D");
+                string time = string.Format("{0:D2}:{1:D2}:{2:D2}",
+                    c.Hour, c.Minute, c.Second);
+
+                g.DrawString(date, fDate, bDate, new Point(50,100));
+                g.DrawString(time, fTime, bTime, new Point(50, 120));
+            }
         }
 
         // 시계바늘 그리는 메소드
@@ -110,8 +129,23 @@ namespace _038_FormClock
             radius = clockSize / 2;
 
             hourHand = (int)(radius * 0.45);
-            minHand = (int)(radius * 0.45);
-            secHand = (int)(radius * 0.45);
+            minHand = (int)(radius * 0.55);
+            secHand = (int)(radius * 0.65);
+        }
+
+        private void 아날로그ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            aClock_Flag = true;
+        }
+
+        private void 디지털ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            aClock_Flag = false;
+        }
+
+        private void 끝내기ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
