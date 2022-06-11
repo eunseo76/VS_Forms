@@ -44,7 +44,7 @@ namespace _036_EcgPpg
         private void ChartSetting()
         {
             c.ChartAreas[0].CursorX.IsUserEnabled = true; // 커서 사용가능
-            c.ChartAreas[0].CursorY.IsUserSelectionEnabled = true; // zoom
+            c.ChartAreas[0].CursorX.IsUserSelectionEnabled = true; // zoom
             c.ChartAreas[0].BackColor = Color.Black;
             c.ChartAreas[0].AxisX.Minimum = 0;
             c.ChartAreas[0].AxisX.Maximum = ecgCount;
